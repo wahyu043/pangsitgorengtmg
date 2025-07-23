@@ -1,302 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pangsit Goreng Temanggung</title>
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="dist/output.css">
-    <!-- Custom CSS tambahan Disini-->
-    <!-- <link rel="stylesheet" href="main.css"> -->
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
-    <!-- Carousel JS -->
-    <script>
-        document.addEventListener('scroll', () => {
-          const carousel = document.getElementById('carousel-container');
-          const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-          const scrollY = window.scrollY || window.pageYOffset;
-          // Biar smooth dan nggak terlalu cepat, bisa ubah 0.5 sesuai selera
-          const proporsional = Math.min(scrollY * 100, maxScrollLeft);
-          carousel.scrollLeft = proporsional;
-        });
-      </script>      
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pangsit Goreng Temanggung</title>
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="dist/output.css">
+  <!-- Custom CSS tambahan Disini-->
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous">
+  <!-- Carousel JS -->
+  <script>
+    document.addEventListener('scroll', () => {
+      const carousel = document.getElementById('carousel-container');
+      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+      const scrollY = window.scrollY || window.pageYOffset;
+      // Biar smooth dan nggak terlalu cepat, bisa ubah 0.5 sesuai selera
+      const proporsional = Math.min(scrollY * 0.1, maxScrollLeft);
+      carousel.scrollLeft = proporsional;
+    });
+  </script>
+  <!-- Scroll behaviuor -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <!-- AOS Animate On Scroll CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <!-- navbar -->
-    <nav class="bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 px-4 py-3 shadow">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <!-- Brand/logo -->
-          <a href="index.html" class="flex items-center">
-            <img src="img/img-logo.png" alt="pangsitgorengtmg-logo" class="h-10 w-auto">
-          </a>
-          <!-- Nav Links -->
-          <div class="flex gap-4">
-            <a href="#about" class="text-gray-900 hover:text-white font-semibold transition">Tentang Kami</a>
-            <a href="#produk" class="text-gray-900 hover:text-white font-semibold transition">Produk</a>
-            <a href="#pesan" class="text-gray-900 hover:text-white font-semibold transition">Pesan Sekarang</a>
+  <!-- navbar -->
+  <nav class="bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 px-4 py-3 shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between relative">
+      <!-- Brand/logo -->
+      <a href="index.html" class="flex items-center">
+        <img src="img/img-logo.png" alt="pangsitgorengtmg-logo" class="h-10 w-auto">
+      </a>
+      <!-- Hamburger Button (Mobile Only) -->
+      <button id="menuBtn" class="md:hidden text-yellow-900 focus:outline-none text-3xl" aria-label="Menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <!-- Nav Links -->
+      <div id="navLinks"
+        class="hidden flex-col gap-4 absolute top-full left-0 w-full bg-yellow-300 shadow-lg md:static md:flex md:flex-row md:bg-transparent md:shadow-none md:w-auto md:gap-4 z-50 rounded-b-2xl transition-all duration-300">
+        <a href="#about" class="text-gray-900 hover:text-white font-semibold transition block py-2 md:py-0 px-4 md:px-0">Tentang Kami</a>
+        <a href="#produk" class="text-gray-900 hover:text-white font-semibold transition block py-2 md:py-0 px-4 md:px-0">Produk</a>
+        <a href="#pesan" class="text-gray-900 hover:text-white font-semibold transition block py-2 md:py-0 px-4 md:px-0">Pesan Sekarang</a>
+      </div>
+    </div>
+  </nav>
+  <!-- end of navbar -->
+
+  <!-- Hero -->
+  <section class="relative flex items-center justify-center min-h-screen bg-fixed bg-center bg-cover"
+    style="background-image: url('img/img-jumbo.jpg');">
+    <!-- Overlay agar teks tetap kontras -->
+    <div class="absolute inset-0 bg-yellow-950 bg-opacity-70"></div>
+    <div class="relative z-10 max-w-2xl mx-auto text-center px-4">
+      <h1 class="text-3xl md:text-5xl font-bold text-yellow-100 mb-6 drop-shadow-sm">
+        Nikmati Kelezatan Pangsit yang Menggugah Selera
+      </h1>
+      <p class="text-lg md:text-xl text-yellow-50 mb-8">
+        Temukan Ragam Varian Pangsit Menggoda di Tempat Kami!
+      </p>
+      <a href="#"
+        class="inline-block px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-semibold rounded-xl shadow-lg hover:from-yellow-500 hover:to-orange-500 transition">
+        Pesan Sekarang!
+      </a>
+    </div>
+  </section>
+  <!-- End of Hero -->
+
+  <!-- Advantages -->
+  <section class="py-16 bg-yellow-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Advantage 1 -->
+        <div class="flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <img src="img/online-shopping.png" alt="Delivery Order" class="h-20 mb-4">
+          <h3 class="text-lg font-bold text-yellow-900 mb-2">Delivery Order</h3>
+          <p class="text-gray-700">Nikmati Kemudahan Pesan Antar dan Dapatkan Pangsit Favoritmu via Grabfood</p>
+        </div>
+        <!-- Advantage 2 -->
+        <div class="flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <img src="img/seasoning.png" alt="Bumbu Alami" class="h-20 mb-4">
+          <h3 class="text-lg font-bold text-yellow-900 mb-2">Bumbu Alami</h3>
+          <p class="text-gray-700">Pangsit dengan Bumbu Alami. Nikmati Kelezatan yang Autentik dan Sehat dari
+            Bahan-bahan Pilihan.</p>
+        </div>
+        <!-- Advantage 3 -->
+        <div class="flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <img src="img/special-offer.png" alt="Penawaran Terbaik" class="h-20 mb-4">
+          <h3 class="text-lg font-bold text-yellow-900 mb-2">Penawaran Terbaik</h3>
+          <p class="text-gray-700">Penawaran Terbaik untuk Anda. Rasakan Sensasi Pangsit Lezat dengan Harga Spesial dan
+            Bonus Menarik!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of advantages -->
+
+  <!-- About Us -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <!-- Image -->
+      <div class="flex justify-center">
+        <img src="img/img-sample2.jpg" alt="Tentang Kami"
+          class="rounded-2xl shadow-xl max-w-xs md:max-w-md w-full object-cover">
+      </div>
+      <!-- Text Content -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-yellow-900 mb-4">Tentang Kami</h2>
+        <p class="text-gray-700 text-lg mb-6">
+          Kami menyajikan pangsit dengan cita rasa yang luar biasa dan kualitas terbaik.
+          Dengan dedikasi kami untuk memberikan pengalaman kuliner yang tak terlupakan,
+          Pangsitgorengtmg telah menjadi tujuan favorit bagi pecinta makanan di Temanggung.
+          Kami bangga menggunakan bahan-bahan segar dan berkualitas tinggi dalam setiap hidangan pangsit kami.
+          Dengan bumbu alami yang dipilih dengan cermat dan resep yang diwariskan secara turun temurun,
+          setiap gigitan pangsit kami akan memanjakan lidah Anda dan membawa Anda ke dalam perjalanan kuliner yang
+          menggugah selera.
+        </p>
+        <a href="#"
+          class="inline-block px-7 py-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-semibold rounded-lg shadow-lg hover:from-yellow-500 hover:to-orange-500 transition">
+          Pesan Sekarang Juga
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- End of About Us -->
+
+  <!-- Our Product -->
+  <section id="produk" class="py-16 bg-gradient-to-br from-yellow-100 to-orange-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-yellow-900 mb-8 text-center">Produk Kami</h2>
+      <div id="carousel-container" class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4">
+        <!-- Card Produk 1 -->
+        <div
+          class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105"
+          data-aos="fade-up" data-aos-delay="0">
+          <img src="img/img-product1.jpg" alt="Pangsit Goreng Original" class="rounded-t-2xl w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-yellow-900 mb-1">Pangsit Goreng Original</h4>
+            <p class="text-gray-700 mb-2 text-sm">Lezat dan gurih dengan resep turun temurun.</p>
+            <a href="#"
+              class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan
+              Sekarang</a>
           </div>
         </div>
-    </nav>
-    <!-- end of navbar -->
-
-    <!-- Hero -->
-      <section class="relative overflow-hidden py-16 bg-gradient-to-br from-yellow-200 via-yellow-50 to-gray-100">
-
-        <!-- Background Image -->
-        <img src="img/img-jumbo.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-40 z-0" />
-      
-        <div class="relative max-w-2xl mx-auto text-center z-10 px-4">
-          <!-- Kalau mau logo di sini juga, boleh -->
-          <!-- <img src="img/img-logo.png" alt="Logo" class="mx-auto mb-4 h-20 drop-shadow-md"> -->
-          <h1 class="text-3xl md:text-5xl font-bold text-yellow-900 mb-6 drop-shadow-sm">
-            Nikmati Kelezatan Pangsit yang Menggugah Selera
-          </h1>
-          <p class="text-lg md:text-xl text-yellow-800 mb-8">
-            Temukan Ragam Varian Pangsit Menggoda di Tempat Kami!
-          </p>
-          <a href="#" class="inline-block px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-semibold rounded-xl shadow-lg hover:from-yellow-500 hover:to-orange-500 transition">
-            Pesan Sekarang!
-          </a>
-        </div>
-      </section>
-    <!-- End of Hero -->
-    
-    <!-- Advantages -->
-    <section class="py-16 bg-yellow-50">
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <!-- Advantage 1 -->
-            <div class="flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-              <img src="img/online-shopping.png" alt="Delivery Order" class="h-20 mb-4">
-              <h3 class="text-lg font-bold text-yellow-900 mb-2">Delivery Order</h3>
-              <p class="text-gray-700">Nikmati Kemudahan Pesan Antar dan Dapatkan Pangsit Favoritmu via Grabfood</p>
-            </div>
-            <!-- Advantage 2 -->
-            <div class="flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-              <img src="img/seasoning.png" alt="Bumbu Alami" class="h-20 mb-4">
-              <h3 class="text-lg font-bold text-yellow-900 mb-2">Bumbu Alami</h3>
-              <p class="text-gray-700">Pangsit dengan Bumbu Alami. Nikmati Kelezatan yang Autentik dan Sehat dari Bahan-bahan Pilihan.</p>
-            </div>
-            <!-- Advantage 3 -->
-            <div class="flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-              <img src="img/special-offer.png" alt="Penawaran Terbaik" class="h-20 mb-4">
-              <h3 class="text-lg font-bold text-yellow-900 mb-2">Penawaran Terbaik</h3>
-              <p class="text-gray-700">Penawaran Terbaik untuk Anda. Rasakan Sensasi Pangsit Lezat dengan Harga Spesial dan Bonus Menarik!</p>
-            </div>
+        <!-- Card Produk 2 -->
+        <div
+          class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105"
+          data-aos="fade-up" data-aos-delay="200">
+          <img src="img/img-product2.jpg" alt="Pangsit Ayam Pedas" class="rounded-t-2xl w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-yellow-900 mb-1">Pangsit Ayam Pedas</h4>
+            <p class="text-gray-700 mb-2 text-sm">Sensasi pedas nikmat, cocok untuk pecinta pedas.</p>
+            <a href="#"
+              class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan
+              Sekarang</a>
           </div>
         </div>
-      </section>     
-    <!-- End of advantages -->
-
-    <!-- About Us -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-          <!-- Image -->
-          <div class="flex justify-center">
-            <img src="img/img-sample2.jpg" alt="Tentang Kami" class="rounded-2xl shadow-xl max-w-xs md:max-w-md w-full object-cover">
-          </div>
-          <!-- Text Content -->
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-yellow-900 mb-4">Tentang Kami</h2>
-            <p class="text-gray-700 text-lg mb-6">
-              Kami menyajikan pangsit dengan cita rasa yang luar biasa dan kualitas terbaik.
-              Dengan dedikasi kami untuk memberikan pengalaman kuliner yang tak terlupakan,
-              Pangsitgorengtmg telah menjadi tujuan favorit bagi pecinta makanan di Temanggung.
-              Kami bangga menggunakan bahan-bahan segar dan berkualitas tinggi dalam setiap hidangan pangsit kami.
-              Dengan bumbu alami yang dipilih dengan cermat dan resep yang diwariskan secara turun temurun,
-              setiap gigitan pangsit kami akan memanjakan lidah Anda dan membawa Anda ke dalam perjalanan kuliner yang menggugah selera.
-            </p>
-            <a href="#" class="inline-block px-7 py-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-semibold rounded-lg shadow-lg hover:from-yellow-500 hover:to-orange-500 transition">
-              Pesan Sekarang Juga
-            </a>
+        <!-- Card Produk 3 -->
+        <div
+          class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105"
+          data-aos="fade-up" data-aos-delay="400">
+          <img src="img/img-product3.jpg" alt="Pangsit Spesial Keju" class="rounded-t-2xl w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-yellow-900 mb-1">Pangsit Spesial Keju</h4>
+            <p class="text-gray-700 mb-2 text-sm">Kombinasi unik pangsit dan keju, favorit anak-anak!</p>
+            <a href="#"
+              class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan
+              Sekarang</a>
           </div>
         </div>
-      </section> 
-    <!-- End of About Us -->
-
-    <!-- Our Product -->
-    <section id="produk" class="py-16 bg-gradient-to-br from-yellow-100 to-orange-50">
-        <div class="max-w-7xl mx-auto px-4">
-          <h2 class="text-3xl font-bold text-yellow-900 mb-8 text-center">Produk Kami</h2>
-          <div id="carousel-container" class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4">
-            <!-- Card Produk 1 -->
-            <div class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105">
-              <img src="img/img-product1.jpg" alt="Pangsit Goreng Original" class="rounded-t-2xl w-full h-44 object-cover">
-              <div class="p-4">
-                <h4 class="font-bold text-yellow-900 mb-1">Pangsit Goreng Original</h4>
-                <p class="text-gray-700 mb-2 text-sm">Lezat dan gurih dengan resep turun temurun.</p>
-                <a href="#" class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan Sekarang</a>
-              </div>
-            </div>
-            <!-- Card Produk 2 -->
-            <div class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105">
-              <img src="img/img-product2.jpg" alt="Pangsit Ayam Pedas" class="rounded-t-2xl w-full h-44 object-cover">
-              <div class="p-4">
-                <h4 class="font-bold text-yellow-900 mb-1">Pangsit Ayam Pedas</h4>
-                <p class="text-gray-700 mb-2 text-sm">Sensasi pedas nikmat, cocok untuk pecinta pedas.</p>
-                <a href="#" class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan Sekarang</a>
-              </div>
-            </div>
-            <!-- Card Produk 3 -->
-            <div class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105">
-              <img src="img/img-product3.jpg" alt="Pangsit Spesial Keju" class="rounded-t-2xl w-full h-44 object-cover">
-              <div class="p-4">
-                <h4 class="font-bold text-yellow-900 mb-1">Pangsit Spesial Keju</h4>
-                <p class="text-gray-700 mb-2 text-sm">Kombinasi unik pangsit dan keju, favorit anak-anak!</p>
-                <a href="#" class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan Sekarang</a>
-              </div>
-            </div>
-            <!-- Card Produk 4 -->
-            <div class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105">
-              <img src="img/img-product4.jpg" alt="Pangsit Sayur Sehat" class="rounded-t-2xl w-full h-44 object-cover">
-              <div class="p-4">
-                <h4 class="font-bold text-yellow-900 mb-1">Pangsit Sayur Sehat</h4>
-                <p class="text-gray-700 mb-2 text-sm">Pilihan sehat, penuh nutrisi dari sayur segar pilihan.</p>
-                <a href="#" class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan Sekarang</a>
-              </div>
-            </div>
-            <!-- Card Produk 5 -->
-            <div class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105">
-              <img src="img/img-product5.jpg" alt="Pangsit Seafood" class="rounded-t-2xl w-full h-44 object-cover">
-              <div class="p-4">
-                <h4 class="font-bold text-yellow-900 mb-1">Pangsit Seafood</h4>
-                <p class="text-gray-700 mb-2 text-sm">Kaya rasa laut, gurih dan lembut di setiap gigitan.</p>
-                <a href="#" class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan Sekarang</a>
-              </div>
-            </div>
-            <!-- Tambahkan card sesuai kebutuhan -->
+        <!-- Card Produk 4 -->
+        <div
+          class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105"
+          data-aos="fade-up" data-aos-delay="800">
+          <img src="img/img-product4.jpg" alt="Pangsit Sayur Sehat" class="rounded-t-2xl w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-yellow-900 mb-1">Pangsit Sayur Sehat</h4>
+            <p class="text-gray-700 mb-2 text-sm">Pilihan sehat, penuh nutrisi dari sayur segar pilihan.</p>
+            <a href="#"
+              class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan
+              Sekarang</a>
           </div>
         </div>
-      </section>     
-    <!-- End of Our Product -->
-
-    <!-- Testimonial -->
-    <section class="py-16 bg-white">
-        <div class="max-w-5xl mx-auto px-4">
-          <h3 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-8 text-center">Apa Kata Mereka?</h3>
-          <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
-            <!-- Testimoni 1 -->
-            <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 shadow flex flex-col items-center flex-1">
-              <i class="fa fa-quote-right text-yellow-400 text-4xl mb-4"></i>
-              <h4 class="font-bold text-yellow-900 mb-1">John Doe</h4>
-              <p class="text-gray-700 mb-4 text-center text-sm">“Pangsitgorengtmg enak banget, pesanan cepat sampai dan rasanya juara! Bakal repeat order lagi, deh.”</p>
-              <img src="img/testi1.jpg" alt="John Doe" class="w-14 h-14 object-cover rounded-full shadow">
-            </div>
-            <!-- Testimoni 2 -->
-            <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 shadow flex flex-col items-center flex-1">
-              <i class="fa fa-quote-right text-yellow-400 text-4xl mb-4"></i>
-              <h4 class="font-bold text-yellow-900 mb-1">Rina Andini</h4>
-              <p class="text-gray-700 mb-4 text-center text-sm">“Bumbunya terasa alami dan fresh. Anak-anak di rumah juga suka banget. Recommended!”</p>
-              <img src="img/testi2.jpg" alt="Rina Andini" class="w-14 h-14 object-cover rounded-full shadow">
-            </div>
-            <!-- Testimoni 3 -->
-            <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 shadow flex flex-col items-center flex-1">
-              <i class="fa fa-quote-right text-yellow-400 text-4xl mb-4"></i>
-              <h4 class="font-bold text-yellow-900 mb-1">Agus Suryo</h4>
-              <p class="text-gray-700 mb-4 text-center text-sm">“Penawaran paket promo bikin irit, rasa tetap premium. Cocok buat acara keluarga.”</p>
-              <img src="img/testi3.jpg" alt="Agus Suryo" class="w-14 h-14 object-cover rounded-full shadow">
-            </div>
+        <!-- Card Produk 5 -->
+        <div
+          class="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-xl flex-shrink-0 snap-center transition hover:scale-105"
+          data-aos="fade-up" data-aos-delay="1600">
+          <img src="img/img-product5.jpg" alt="Pangsit Seafood" class="rounded-t-2xl w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-yellow-900 mb-1">Pangsit Seafood</h4>
+            <p class="text-gray-700 mb-2 text-sm">Kaya rasa laut, gurih dan lembut di setiap gigitan.</p>
+            <a href="#"
+              class="inline-block px-5 py-2 bg-yellow-400 text-white rounded-lg font-semibold hover:bg-orange-400 transition">Pesan
+              Sekarang</a>
           </div>
         </div>
-      </section>      
-    <!-- End of Testimonial -->
+        <!-- Tambahkan card sesuai kebutuhan -->
+      </div>
+    </div>
+  </section>
+  <!-- End of Our Product -->
 
-    <!-- CTA -->
-    <section id="pesan" class="py-16 bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-300">
-        <div class="max-w-3xl mx-auto text-center px-4">
-          <h2 class="text-3xl md:text-4xl font-bold text-yellow-900 mb-4">Siap Menikmati Pangsit Lezat?</h2>
-          <p class="text-lg text-yellow-800 mb-8">Pesan sekarang juga dan rasakan kelezatan pangsit khas Temanggung dari Pangsitgorengtmg!  
-            Tersedia berbagai pilihan varian, delivery cepat, dan promo menarik untukmu.</p>
-          <a href="https://wa.me/6281234567890" target="_blank"
-             class="inline-block px-8 py-4 bg-orange-500 text-white font-bold text-lg rounded-xl shadow hover:bg-orange-600 transition">
-            Pesan via WhatsApp
-          </a>
+  <!-- Testimonial -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h3 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-8 text-center">Apa Kata Mereka?</h3>
+      <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+        <!-- Testimoni 1 -->
+        <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 shadow flex flex-col items-center flex-1">
+          <i class="fa fa-quote-right text-yellow-400 text-4xl mb-4"></i>
+          <h4 class="font-bold text-yellow-900 mb-1">Muhammad Aulia</h4>
+          <p class="text-gray-700 mb-4 text-center text-sm">“Pangsitgorengtmg enak banget, pesanan cepat sampai dan
+            rasanya juara! Bakal repeat order lagi, deh.”</p>
+          <img src="img/dummy-profile-pic-300x300.png" alt="Muhammad Aulia" class="w-14 h-14 object-cover rounded-full shadow">
         </div>
-      </section>      
-    <!-- End of CTA -->
-
-    <!-- FAQ -->
-    <section class="py-16 bg-white">
-        <div class="max-w-3xl mx-auto px-4">
-          <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-8 text-center">FAQ (Pertanyaan Umum)</h2>
-          <div class="space-y-4">
-      
-            <!-- FAQ 1 -->
-            <details class="group bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-              <summary class="font-semibold text-yellow-900 cursor-pointer flex items-center justify-between">
-                Apakah bisa pesan untuk acara/event besar?
-                <span class="ml-2 group-open:rotate-180 transition-transform">
-                  <svg width="20" height="20" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
-                </span>
-              </summary>
-              <div class="mt-2 text-gray-700 text-sm">
-                Tentu saja! Kami melayani pesanan partai besar untuk event, meeting, dan acara keluarga.
-              </div>
-            </details>
-            <!-- FAQ 2 -->
-            <details class="group bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-              <summary class="font-semibold text-yellow-900 cursor-pointer flex items-center justify-between">
-                Apakah tersedia varian non-pedas?
-                <span class="ml-2 group-open:rotate-180 transition-transform">
-                  <svg width="20" height="20" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
-                </span>
-              </summary>
-              <div class="mt-2 text-gray-700 text-sm">
-                Ada! Kami punya varian original, keju, dan sayur untuk yang tidak suka pedas.
-              </div>
-            </details>
-            <!-- FAQ 3 -->
-            <details class="group bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-              <summary class="font-semibold text-yellow-900 cursor-pointer flex items-center justify-between">
-                Apakah bisa pesan lewat GoFood/GrabFood?
-                <span class="ml-2 group-open:rotate-180 transition-transform">
-                  <svg width="20" height="20" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
-                </span>
-              </summary>
-              <div class="mt-2 text-gray-700 text-sm">
-                Bisa, silakan cek aplikasi GoFood atau GrabFood dan cari "Pangsitgorengtmg".
-              </div>
-            </details>
-      
-          </div>
+        <!-- Testimoni 2 -->
+        <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 shadow flex flex-col items-center flex-1">
+          <i class="fa fa-quote-right text-yellow-400 text-4xl mb-4"></i>
+          <h4 class="font-bold text-yellow-900 mb-1">Rina Andini</h4>
+          <p class="text-gray-700 mb-4 text-center text-sm">“Bumbunya terasa alami dan fresh. Anak-anak di rumah juga
+            suka banget. Recommended!”</p>
+          <img src="img/dummy-profile-pic-300x300.png" alt="Rina Andini" class="w-14 h-14 object-cover rounded-full shadow">
         </div>
-      </section>      
-    <!-- End of FAQ -->
+        <!-- Testimoni 3 -->
+        <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 shadow flex flex-col items-center flex-1">
+          <i class="fa fa-quote-right text-yellow-400 text-4xl mb-4"></i>
+          <h4 class="font-bold text-yellow-900 mb-1">Agus Suryo</h4>
+          <p class="text-gray-700 mb-4 text-center text-sm">“Penawaran paket promo bikin irit, rasa tetap premium. Cocok
+            buat acara keluarga.”</p>
+          <img src="img/dummy-profile-pic-300x300.png" alt="Agus Suryo" class="w-14 h-14 object-cover rounded-full shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Testimonial -->
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-300 text-yellow-900 py-8">
-        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="text-center md:text-left flex items-center gap-2">
-            <svg class="w-6 h-6 text-orange-500 inline-block animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 18.343l-6.828-6.829a4 4 0 010-5.656z"/>
-            </svg>
-            <span class="font-semibold">copyright &copy; pangsitgorengtmg <span id="footer-year"></span></span>
-          </div>
-          <div class="text-center text-sm flex items-center gap-2">
-            <span>
-              built with <span class="text-red-500">❤️</span> by
-              <a href="https://wahyu043.github.io/wahyumahmudi/" target="_blank" class="underline hover:text-orange-600 font-semibold transition">
-                Wahyu Mahmudiyanto
-              </a>
+  <!-- CTA -->
+  <section id="pesan" class="py-16 bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-300">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-yellow-900 mb-4">Siap Menikmati Pangsit Lezat?</h2>
+      <p class="text-lg text-yellow-800 mb-8">Pesan sekarang juga dan rasakan kelezatan pangsit khas Temanggung dari
+        Pangsitgorengtmg!
+        Tersedia berbagai pilihan varian, delivery cepat, dan promo menarik untukmu.</p>
+      <a href="https://wa.me/6281234567890" target="_blank"
+        class="inline-block px-8 py-4 bg-orange-500 text-white font-bold text-lg rounded-xl shadow hover:bg-orange-600 transition">
+        Pesan via WhatsApp
+      </a>
+    </div>
+  </section>
+  <!-- End of CTA -->
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-8 text-center">FAQ (Pertanyaan Umum)</h2>
+      <div class="space-y-4">
+
+        <!-- FAQ 1 -->
+        <details class="group bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+          <summary class="font-semibold text-yellow-900 cursor-pointer flex items-center justify-between">
+            Apakah bisa pesan untuk acara/event besar?
+            <span class="ml-2 group-open:rotate-180 transition-transform">
+              <svg width="20" height="20" fill="none" stroke="currentColor">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </span>
+          </summary>
+          <div class="mt-2 text-gray-700 text-sm">
+            Tentu saja! Kami melayani pesanan partai besar untuk event, meeting, dan acara keluarga.
           </div>
-          <div class="text-center flex items-center gap-1">
-            <span class="text-xs">deploy</span>
-            <a href="https://vercel.com/" target="_blank" class="inline-flex items-center gap-1 text-black hover:underline font-bold transition">
-              <svg width="18" height="18" fill="none" viewBox="0 0 32 32" class="inline-block"><path d="M16 4l14 24H2z" fill="#000"/></svg>
-              <span>Vercel</span>
-            </a>
+        </details>
+        <!-- FAQ 2 -->
+        <details class="group bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+          <summary class="font-semibold text-yellow-900 cursor-pointer flex items-center justify-between">
+            Apakah tersedia varian non-pedas?
+            <span class="ml-2 group-open:rotate-180 transition-transform">
+              <svg width="20" height="20" fill="none" stroke="currentColor">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-2 text-gray-700 text-sm">
+            Ada! Kami punya varian original, keju, dan sayur untuk yang tidak suka pedas.
           </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-      
-      
-      <script>
-        document.getElementById('footer-year').textContent = new Date().getFullYear();
-      </script>
+        </details>
+        <!-- FAQ 3 -->
+        <details class="group bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+          <summary class="font-semibold text-yellow-900 cursor-pointer flex items-center justify-between">
+            Apakah bisa pesan lewat GoFood/GrabFood?
+            <span class="ml-2 group-open:rotate-180 transition-transform">
+              <svg width="20" height="20" fill="none" stroke="currentColor">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-2 text-gray-700 text-sm">
+            Bisa, silakan cek aplikasi GoFood atau GrabFood dan cari "Pangsitgorengtmg".
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+  <!-- End of FAQ -->
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-300 text-yellow-900 py-8">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-center md:text-left flex items-center gap-2">
+        <svg class="w-6 h-6 text-orange-500 inline-block animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 18.343l-6.828-6.829a4 4 0 010-5.656z" />
+        </svg>
+        <span class="font-semibold">copyright &copy; pangsitgorengtmg <span id="footer-year"></span></span>
+      </div>
+      <div class="text-center text-sm flex items-center gap-2">
+        <span>
+          built with <span class="text-red-500">❤️</span> by
+          <a href="https://wahyu043.github.io/wahyumahmudi/" target="_blank"
+            class="underline hover:text-orange-600 font-semibold transition">
+            Wahyu Mahmudiyanto
+          </a>
+        </span>
+      </div>
+      <div class="text-center flex items-center gap-1">
+        <span class="text-xs">deploy</span>
+        <a href="https://vercel.com/" target="_blank"
+          class="inline-flex items-center gap-1 text-black hover:underline font-bold transition">
+          <svg width="18" height="18" fill="none" viewBox="0 0 32 32" class="inline-block">
+            <path d="M16 4l14 24H2z" fill="#000" />
+          </svg>
+          <span>Vercel</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  <!-- Navbar collapse in Mobile -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+  
+    // Optional: Close menu ketika klik salah satu link (biar user friendly)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if(window.innerWidth < 768) navLinks.classList.add('hidden');
+      });
+    });
+  </script>
+  
+  <!-- Tombol Swipe Up -->
+  <button id="toTopBtn"
+    class="fixed bottom-6 right-6 z-50 hidden md:inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-white shadow-lg hover:bg-orange-400 transition-all duration-300"
+    aria-label="Kembali ke atas">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <!-- Swipe Up Button -->
+  <script>
+    // Show button after scroll
+    const toTopBtn = document.getElementById('toTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        toTopBtn.classList.remove('hidden');
+      } else {
+        toTopBtn.classList.add('hidden');
+      }
+    });
+
+    // Scroll ke atas smooth
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // ms, bisa diubah pelan/cepet
+      once: true // animasi hanya sekali
+    });
+  </script>
+
+
+  <!-- Update Year JS -->
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
+
 </html>
