@@ -51,4 +51,5 @@ Ini adalah **landing page** latihan untuk brand *Pangsit Goreng TMG*, dibuat den
 **Silakan fork, kloning, atau request fitur baru!**  
 Untuk feedback/bug, langsung open issue atau DM via [GitHub Pages](https://wahyu043.github.io/wahyumahmudi/).
 
+Hasil demo live bisa klik disini : [pangsitgorengtmg.vercel.app](https://pangsitgorengtmg.vercel.app/)
 ---
